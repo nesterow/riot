@@ -1999,6 +1999,12 @@
         defineProperty(this, 'root', element); // before mount lifecycle event
 
         this.onBeforeMount(this.props, this.state); // handlte the template and its attributes
+        
+        if (element.firstChild) { // clear element's content before mount
+          while (element.firstChild) {
+            element.removeChild(element.firstChild)
+          }
+        }
 
         this[ATTRIBUTES_KEY_SYMBOL].mount(element, parentScope);
         this[TEMPLATE_KEY_SYMBOL].mount(element, this); // create the slots and mount them

@@ -54,6 +54,7 @@ npm-debug.log
 bower_components
 coverage
 dist
+.yarn.lock
 
 /dist/*
 
